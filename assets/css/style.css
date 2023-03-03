@@ -21,3 +21,15 @@ h1 {
     font-size: 325%;
 }
 
+#game-description {
+    color: #f7f7fc;
+    text-align: center;
+/*    font-family: 'Courier Prime', monospace; */
+    font-family: 'Gruppo', cursive;
+}
+
+.scores {
+    color: #f7f7fc;
+    font-family: 'Gruppo', cursive;
+    font-weight: bold;
+}

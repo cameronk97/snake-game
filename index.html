@@ -26,22 +26,21 @@
     <!-- game description section -->
     <section id="game-description">
         <p>Use your arrow keys or the arrow controls below to change direction. 
-            Eat as much as you can!
+            <br>Eat as much as you can!
         </p>
     </section>
 
-    <!-- game scores and volume control bar -->
+    <!-- game scores and toggle music bar -->
     <section>
-        <div id="current-score">Score: <span id="score">0</span></div>
+        <div id="current-score" class="scores">Score: <span id="score">0</span></div>
         <div id="toggle-music">
-            <input type="checkbox" id="music" aria-label="Music">
-            <label for="music">
-                <i class="fas fa-volume-mute sound-off"></i>
-                <i class="fas fa-volume-up sound-on"></i>
-            </label>
-            <audio src=""></audio>
+            <button class="sound-button" onclick="toggleMusic()">
+                <span><i class="fas fa-volume-up sound-on"></i></span>
+                <span><i class="fas fa-volume-mute sound-off"></i></span>
+            </button>
+            <audio id="music" src=""></audio>
         </div>
-        <div id="high-score">High Score: <span id="highscore">0</span></div>
+        <div id="high-score" class="scores">High Score: <span id="highscore">0</span></div>
     </section>
 
     <!-- game area -->
