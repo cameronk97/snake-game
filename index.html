@@ -29,6 +29,65 @@
             Eat as much as you can!
         </p>
     </section>
+
+    <!-- game scores and volume control bar -->
+    <section>
+        <div id="current-score">Score: <span id="score">0</span></div>
+        <div id="toggle-music">
+            <input type="checkbox" id="music" aria-label="Music">
+            <label for="music">
+                <i class="fas fa-volume-mute sound-off"></i>
+                <i class="fas fa-volume-up sound-on"></i>
+            </label>
+            <audio src=""></audio>
+        </div>
+        <div id="high-score">High Score: <span id="highscore">0</span></div>
+    </section>
+
+    <!-- game area -->
+    <section>
+        <div id="canvas-container">
+            <canvas id="game-area" width="400" height="400"></canvas>
+            <button id="startGame">Start Game</button>
+        </div>
+    </section>
+
+    <!-- arrow control buttons -->
+    <table id="control-buttons">
+        <tr>
+            <td></td>
+            <td>
+                <button class="game-input" id="btn-up" aria-label="Up Button"><i class="fa-solid fa-arrow-up"></i></button>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <button class="game-input" id="btn-left" aria-label="Left Button"><i class="fa-solid fa-arrow-left"></i></button>
+            </td>
+            <td></td>
+            <td>
+                <button class="game-input" id="btn-right" aria-label="Right Button"><i class="fa-solid fa-arrow-right"></i></button>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button class="game-input" id="btn-down" aria-label="Down Button"><i class="fa-solid fa-arrow-down"></i></button>
+            </td>
+            <td></td>
+        </tr>
+    </table>   
+
+    <!-- footer -->
+    <footer>
+        <div>
+            <p>Created by Cameron Kirby</p>
+        </div>
+    </footer>
+
+    <!-- font awesome script -->
+    <script src="https://kit.fontawesome.com/e822f03aa9.js" crossorigin="anonymous"></script>
     <!-- link to external javascript -->
     <script src="assets/js/script.js"></script>
 </body>
