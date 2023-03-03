@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A classic snake game">
+    <meta name="description" content="a classic snake game">
     <meta name="keywords" content="snake, game, online, arcade">
     <!-- link to css stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -31,7 +31,7 @@
     </section>
 
     <!-- game scores and toggle music bar -->
-    <section>
+    <section id="scores-music-section">
         <div id="current-score" class="scores">Score: <span id="score">0</span></div>
         <div id="toggle-music">
             <button class="sound-button" onclick="toggleMusic()">
@@ -46,8 +46,9 @@
     <!-- game area -->
     <section>
         <div id="canvas-container">
-            <canvas id="game-area" width="400" height="400"></canvas>
-            <button id="startGame">Start Game</button>
+            <canvas id="game-area">
+                <button id="startGame">Start Game</button>
+            </canvas>
         </div>
     </section>
 
