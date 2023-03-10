@@ -23,57 +23,56 @@
         </a>
     </header>
 
-    <!-- game description section -->
-    <section id="game-description">
+    <!-- game info section -->
+    <section id="game-info">
         <p>Use your arrow keys or the arrow controls below to change direction. 
             <br>Eat as much as you can!
         </p>
     </section>
 
-    <!-- game scores and toggle music bar -->
-    <section id="scores-music-section">
-        <div id="current-score" class="scores">Score: <span id="score">0</span></div>
-        <div id="toggle-music">
-            <button class="sound-button" onclick="toggleMusic()">
-                <span><i class="fas fa-volume-up sound-on"></i></span>
-                <span><i class="fas fa-volume-mute sound-off"></i></span>
-            </button>
-            <audio id="music" src=""></audio>
-        </div>
-        <div id="high-score" class="scores">High Score: <span id="highscore">0</span></div>
-    </section>
+    <div id="game-wrapper">
+        <!-- game scores section -->
+        <section id="game-scores">
+          <span id="current-score" class="scores">Score: 0</span>
+          <span id="high-score" class="scores">High Score: 0</span>
+        </section>
 
-    <!-- game area -->
-    <section>
-        <div id="canvas-container">
-            <canvas id="game-area">
-                <button id="startGame">Start Game</button>
-            </canvas>
-        </div>
-    </section>
+        <!-- game area -->
+        <section id="game-area" style="display:none"></section>
 
-    <!-- arrow control buttons -->
-    <table id="control-buttons">
+        <div id="start-screen" class="screen" style="display:block">
+            <img src="assets/images/start-screen.png" class="game-screen" alt="">
+            <button class="start-button" onclick="startGame()">Play Game</button>
+        </div>
+
+        <div id="game-over" class="screen" style="display:none">
+            <img src="assets/images/game-over.png" class="game-screen" alt="">
+            <button class="start-button" onclick="startGame()">Play Again</button>
+        </div>
+    </div>
+
+    <!-- mobile control buttons -->
+    <table id="control-btns">
         <tr>
             <td></td>
             <td>
-                <button class="game-input" id="btn-up" aria-label="Up Button"><i class="fa-solid fa-arrow-up"></i></button>
+                <button><i data-key="ArrowUp" class="fa-solid fa-arrow-up" aria-label="Up Button"></i></button>
             </td>
             <td></td>
         </tr>
         <tr>
             <td>
-                <button class="game-input" id="btn-left" aria-label="Left Button"><i class="fa-solid fa-arrow-left"></i></button>
+                <button><i data-key="ArrowLeft" class="fa-solid fa-arrow-left" aria-label="Left Button"></i></button>
             </td>
             <td></td>
             <td>
-                <button class="game-input" id="btn-right" aria-label="Right Button"><i class="fa-solid fa-arrow-right"></i></button>
+                <button><i data-key="ArrowRight" class="fa-solid fa-arrow-right" aria-label="Right Button"></i></button>
             </td>
         </tr>
         <tr>
             <td></td>
             <td>
-                <button class="game-input" id="btn-down" aria-label="Down Button"><i class="fa-solid fa-arrow-down"></i></button>
+                <button><i data-key="ArrowDown" class="fa-solid fa-arrow-down" aria-label="Down Button"></i></button>
             </td>
             <td></td>
         </tr>
