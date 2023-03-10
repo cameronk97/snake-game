@@ -1,9 +1,23 @@
 /* import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Gruppo&family=Press+Start+2P&family=Source+Code+Pro:wght@300&display=swap');
 
-/* background colour */
+ 
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  } */
+
 body {
-    background-color: #351c75;
+    /* background colour for webpage */
+/*    background-color: #351c75; */
+    background-color: #272760;
+    /* flexbox for layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 /* remove default text decoration on all links */
@@ -21,7 +35,7 @@ h1 {
     font-size: 325%;
 }
 
-#game-description {
+#game-info {
     color: #f7f7fc;
     text-align: center;
 /*    font-family: 'Courier Prime', monospace; */
@@ -29,40 +43,118 @@ h1 {
     padding-bottom: 3%;
 }
 
-#scores-music-section {
+#game-wrapper {
+    width: 90vmin;
+    height: 90vmin;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+/*    background: #351c75; */
+    background-color: #272760;
+}
+
+#game-scores {
     text-align: center;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 10px 10px;
 }
 
 .scores {
     color: #f7f7fc;
     font-family: 'Gruppo', cursive;
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
-#canvas-container {
-/*    margin: 0 auto; */
+/* #canvas-container {
     display: flex;
-/*    flex-direction: column; */
     justify-content: center;
     align-items: center;
     align-content: center;
+} */
+
+#start-screen {
+    height: 100%;
+    width: 100%;
+    background: #6275e0;
+    margin-bottom: 10px;
+    position: relative;
+/*    text-align: center; */
+}
+
+.game-screen {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.start-button {
+/*    position: absolute;
+    top: 40%;
+    margin-top: 400px;
+    height: 5%;
+    margin: 0;
+    position: absolute;
+    left: 38vmin; */
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    background-color: #636a91;
+    font-size: 100%;
+    color: #3eff65;
+    text-transform: uppercase;
+    border-radius: 5%;
+    border: 3px outset #0cffe1;
+    padding: 5%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 #game-area {
-/*    background-color: #6b74a8; */
-/*    background-color: #636a91; */
-    align-self: center;
+    height: 100%;
+    width: 100%;
+    display: grid;
+/*    background: #636a91; */
+/*    background-color: #97a3e1; */
+/*    background-color: #6275e0; */
+/*    background-color: #4e5aa1; */
+    background-color: #636a91;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+    margin-bottom: 10px;
+/*    box-shadow: 10px 10px 8px #33374e; */
+/*    border: solid 4px #0cffe1; 
+    border-right: solid 4px #0cffe1; */
 }
 
-#canvas-container button {
-    align-self: center;
-}
+#game-area .food {
+    background: #ff6b6b;
+    /* background-color: #ff4144; */
+  }
+#game-area .head {
+/*    background: #3eff65; */
+    background-color: #0cffe1;
+  }
 
-#control-buttons {
+#controls-btns {
     display: flex;
     justify-content: center;
+}
+
+#control-btns button {
+    background-color: #f7f7fc;
+    border-radius: 30%;
+    border-color: #0cffe1;
+
+}
+
+#control-btns i {
+    cursor: pointer;
+    color: #6275e0;
+    font-weight: bolder;
+    padding: 8px;
 }
 
 footer {
@@ -71,3 +163,14 @@ footer {
     text-align: center;
     padding: 1.5% 0;
 }
+
+/* @media screen and (max-width: 800px) {
+    #game-wrapper {
+      width: 90vmin;
+      height: 115vmin;
+    }
+    .game-scores {
+      font-size: 0.8rem;
+      padding: 8px 10px;
+    }
+} */
