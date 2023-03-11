@@ -40,7 +40,7 @@ const placeFood = () => {
 const handleGameOver = () => {
     // Clearing the timer and reloading the page on game over
    // clearInterval(setIntervalId);
-    location.reload();
+    // location.reload();
     clearInterval(setIntervalId);
     startScreen.style.display = "none";
     gameArea.style.display = "none";
