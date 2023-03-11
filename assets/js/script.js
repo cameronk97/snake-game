@@ -4,6 +4,7 @@ const highScoreElement = document.getElementById("high-score");
 const controls = document.querySelectorAll("#control-btns i");
 const startScreen = document.getElementById("start-screen");
 const gameOverScreen = document.getElementById("game-over");
+const playAgainBtn = document.getElementById("play-again");
 
 let gameOver = false;
 let foodX, foodY;
@@ -25,9 +26,8 @@ function toggleScreen(id, toggle) {
 
 function startGame() {
     startScreen.style.display = "none";
-    gameArea.style.display = "grid";
     gameOverScreen.style.display = "none";
-
+    gameArea.style.display = "grid";
     initGame();
 }
 
@@ -39,12 +39,23 @@ const placeFood = () => {
 
 const handleGameOver = () => {
     // Clearing the timer and reloading the page on game over
+   // clearInterval(setIntervalId);
+    location.reload();
     clearInterval(setIntervalId);
     startScreen.style.display = "none";
     gameArea.style.display = "none";
     gameOverScreen.style.display = "block";
-    // alert("Game Over! Press OK to replay...");
-    // location.reload();
+    document.getElementById("play-again").onclick = startGame();
+//    if(document.getElementById("play-again").clicked == true) {
+//   startGame();
+//}
+}
+
+function startNewGame() {
+    startScreen.style.display = "none";
+    gameOverScreen.style.display = "none";
+    gameArea.style.display = "grid";
+    initGame();
 }
 
 const changeDirection = e => {
