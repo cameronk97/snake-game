@@ -75,18 +75,18 @@ h1 {
     align-content: center;
 } */
 
-#start-screen {
+.game-screen {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.screen {
     height: 100%;
     width: 100%;
     background: #6275e0;
     margin-bottom: 10px;
     position: relative;
 /*    text-align: center; */
-}
-
-.game-screen {
-    max-width: 100%;
-    max-height: 100%;
 }
 
 .start-button {
@@ -136,7 +136,7 @@ h1 {
 #game-area .head {
 /*    background: #3eff65; */
     background-color: #0cffe1;
-  }
+}
 
 #controls-btns {
     display: flex;
