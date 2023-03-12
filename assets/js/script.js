@@ -47,7 +47,7 @@ const handleGameOver = () => {
 }
 
 restartBtn.onclick = function() {
-    location.reload();
+    window.location.reload();
     element.remove(startScreen);
     restartGame();
 };
