@@ -38,10 +38,6 @@ const placeFood = () => {
 }
 
 restartBtn.onclick = function() {
-//    window.location.reload();
-//    window.location.href = window.location.href
-//    window.location = window.location;
-//    window.location.href = window.location.href + '?refresh';
     window.location.reload(true);
     element.remove(startScreen);
     restartGame();
