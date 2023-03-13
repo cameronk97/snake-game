@@ -62,7 +62,6 @@ function endGame() {
  */
 function changeDirection(e) {
     // Changing velocity value on key press
-    e.preventDefault();
     if(e.key === "ArrowUp" && velocityY != 1) {
         velocityX = 0;
         velocityY = -1;
