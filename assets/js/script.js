@@ -37,15 +37,6 @@ const placeFood = () => {
     foodY = Math.floor(Math.random() * 30) + 1;
 }
 
-function handleGameOver() {
-    // Clearing the timer and reloading the page on game over
-//    clearInterval(setIntervalId);
- //   startScreen.style.display = "none";
- //   gameArea.style.display = "none";
- //   gameOverScreen.style.display = "block";
- //   document.getElementById("restart").onclick = restartGame();
-}
-
 restartBtn.onclick = function() {
 //    window.location.reload();
 //    window.location.href = window.location.href
