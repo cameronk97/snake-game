@@ -1,16 +1,8 @@
 /* import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Gruppo&family=Press+Start+2P&family=Source+Code+Pro:wght@300&display=swap');
 
- 
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  } */
-
 body {
     /* background colour for webpage */
-/*    background-color: #351c75; */
     background-color: #272760;
     /* flexbox for layout */
     display: flex;
@@ -35,14 +27,15 @@ h1 {
     font-size: 325%;
 }
 
+/* game information section */
 #game-info {
     color: #f7f7fc;
     text-align: center;
-/*    font-family: 'Courier Prime', monospace; */
-    font-family: 'Gruppo', cursive;
+    font-family: 'Gruppo', Arial, sans-serif;
     padding-bottom: 3%;
 }
 
+/* wrapper for game iscores and game area sections */
 #game-wrapper {
     width: 90vmin;
     height: 90vmin;
@@ -50,10 +43,10 @@ h1 {
     overflow: hidden;
     flex-direction: column;
     justify-content: center;
-/*    background: #351c75; */
     background-color: #272760;
 }
 
+/* current game score and high score section container */
 #game-scores {
     text-align: center;
     display: flex;
@@ -61,6 +54,7 @@ h1 {
     padding: 10px 10px;
 }
 
+/* styles for game scores */
 .scores {
     color: #f7f7fc;
     font-family: 'Gruppo', cursive;
@@ -68,35 +62,23 @@ h1 {
     font-size: 1.1rem;
 }
 
-/* #canvas-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-} */
-
-.game-screen {
-    max-width: 100%;
-    max-height: 100%;
-}
-
+/* styles for start screen and game over screen containers */
 .screen {
     height: 100%;
     width: 100%;
     background: #6275e0;
     margin-bottom: 10px;
     position: relative;
-/*    text-align: center; */
 }
 
+/* set width and height for game start screen and game over screen */
+.game-screen {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* start game button on start screen */
 .start-button {
-/*    position: absolute;
-    top: 40%;
-    margin-top: 400px;
-    height: 5%;
-    margin: 0;
-    position: absolute;
-    left: 38vmin; */
     font-family: 'Press Start 2P', Arial, sans-serif;
     background-color: #636a91;
     font-size: 100%;
@@ -113,36 +95,33 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
+/* grid for game-area */
 #game-area {
     height: 100%;
     width: 100%;
     display: grid;
-/*    background: #636a91; */
-/*    background-color: #97a3e1; */
-/*    background-color: #6275e0; */
-/*    background-color: #4e5aa1; */
     background-color: #636a91;
     grid-template: repeat(30, 1fr) / repeat(30, 1fr);
     margin-bottom: 10px;
-/*    box-shadow: 10px 10px 8px #33374e; */
-/*    border: solid 4px #0cffe1; 
-    border-right: solid 4px #0cffe1; */
 }
 
+/* set colour for food */
 #game-area .food {
-    background: #ff6b6b;
-    /* background-color: #ff4144; */
+    background-color: #ff6b6b;
   }
+
+/* set colour for snake */
 #game-area .head {
-/*    background: #3eff65; */
     background-color: #0cffe1;
 }
 
+/* centre button controls for mobile */
 #controls-btns {
     display: flex;
     justify-content: center;
 }
 
+/* style button controls for mobile */
 #control-btns button {
     background-color: #f7f7fc;
     border-radius: 30%;
@@ -150,6 +129,7 @@ h1 {
 
 }
 
+/* style icons on control buttons for mobile */
 #control-btns i {
     cursor: pointer;
     color: #6275e0;
@@ -157,20 +137,10 @@ h1 {
     padding: 8px;
 }
 
+/* style footer */
 footer {
     color: #f7f7fc;
     font-family: 'Gruppo', cursive;
     text-align: center;
     padding: 1.5% 0;
 }
-
-/* @media screen and (max-width: 800px) {
-    #game-wrapper {
-      width: 90vmin;
-      height: 115vmin;
-    }
-    .game-scores {
-      font-size: 0.8rem;
-      padding: 8px 10px;
-    }
-} */
