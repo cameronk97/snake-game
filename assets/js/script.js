@@ -37,13 +37,13 @@ const placeFood = () => {
     foodY = Math.floor(Math.random() * 30) + 1;
 }
 
-const handleGameOver = () => {
+function handleGameOver() {
     // Clearing the timer and reloading the page on game over
-    clearInterval(setIntervalId);
-    startScreen.style.display = "none";
-    gameArea.style.display = "none";
-    gameOverScreen.style.display = "block";
-    document.getElementById("restart").onclick = restartGame();
+//    clearInterval(setIntervalId);
+ //   startScreen.style.display = "none";
+ //   gameArea.style.display = "none";
+ //   gameOverScreen.style.display = "block";
+ //   document.getElementById("restart").onclick = restartGame();
 }
 
 restartBtn.onclick = function() {
@@ -57,6 +57,11 @@ restartBtn.onclick = function() {
 };
 
 function restartGame() {
+    clearInterval(setIntervalId);
+    startScreen.style.display = "none";
+    gameArea.style.display = "none";
+    gameOverScreen.style.display = "block";
+    document.getElementById("restart").onclick = restartGame();
     startScreen.style.display = "none";
     gameOverScreen.style.display = "none";
     gameArea.style.display = "grid";
@@ -84,7 +89,7 @@ const changeDirection = e => {
 controls.forEach(button => button.addEventListener("click", () => changeDirection({ key: button.dataset.key })));
 
 const initGame = () => {
-    if(gameOver) return handleGameOver();
+    if(gameOver) return restartGame();
     let html = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
 
     // Checking if the snake hit the food
