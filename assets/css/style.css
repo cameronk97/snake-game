@@ -58,7 +58,7 @@ h1 {
 /* styles for game scores */
 .scores {
     color: #f7f7fc;
-    font-family: 'Gruppo', cursive;
+    font-family: 'Gruppo', Arial, sans-serif;
     font-weight: 600;
     font-size: 1.1rem;
 }
@@ -150,7 +150,7 @@ h1 {
 /* style footer */
 footer {
     color: #f7f7fc;
-    font-family: 'Gruppo', cursive;
+    font-family: 'Gruppo', Arial, sans-serif;
     text-align: center;
     padding: 1.5% 0;
 }
