@@ -1,7 +1,7 @@
 const gameArea = document.getElementById("game-area");
 const scoreElement = document.getElementById("current-score");
 const highScoreElement = document.getElementById("high-score");
-const controls = document.querySelectorAll("#control-btns i");
+const controls = document.querySelectorAll("#control-btns button");
 const startScreen = document.getElementById("start-screen");
 const gameOverScreen = document.getElementById("game-over");
 const restartBtn = document.getElementById("restart");
