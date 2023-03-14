@@ -35,7 +35,7 @@ h1 {
     padding-bottom: 3%;
 }
 
-/* wrapper for game iscores and game area sections */
+/* wrapper for game scores and game area sections */
 #game-wrapper {
     width: 90vmin;
     height: 90vmin;
@@ -69,12 +69,14 @@ h1 {
     width: 100%;
     background: #6275e0;
     position: relative;
+    text-align: center;
 }
 
 /* set width and height for game start screen and game over screen */
 .game-screen {
     max-width: 100%;
     max-height: 100%;
+    margin: 0 auto;
 }
 
 /* start game button on start screen */
@@ -120,18 +122,12 @@ h1 {
     background-color: #0cffe1;
 }
 
-/* centre button controls for mobile */
-#controls-btns {
-    display: flex;
-    justify-content: center;
-}
-
 /* style button controls for mobile */
 #control-btns button {
     background-color: #f7f7fc;
     border-radius: 30%;
     border-color: #0cffe1;
-
+    display: none;
 }
 
 /* style icons on control buttons for mobile */
@@ -153,4 +149,13 @@ footer {
     font-family: 'Gruppo', Arial, sans-serif;
     text-align: center;
     padding: 1.5% 0;
+}
+
+/* Media queries */
+
+/* For tablet and mobile screen sizes from 1000px and down */
+@media screen and (max-width: 1000px) {
+    #control-btns button {
+        display: block;
+    }
 }
