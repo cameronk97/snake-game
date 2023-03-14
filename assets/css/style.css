@@ -44,6 +44,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     background-color: #272760;
+    margin-bottom: 10px;
 }
 
 /* current game score and high score section container */
@@ -95,6 +96,12 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
+/* on hover effects for start game and restart buttons */
+.start-button:hover {
+    cursor: pointer;
+    filter: hue-rotate(90deg);
+}
+
 /* grid for game-area */
 #game-area {
     height: 100%;
@@ -102,7 +109,6 @@ h1 {
     display: grid;
     background-color: #636a91;
     grid-template: repeat(30, 1fr) / repeat(30, 1fr);
-    margin-bottom: 10px;
 }
 
 /* set colour for food */
@@ -131,10 +137,15 @@ h1 {
 
 /* style icons on control buttons for mobile */
 #control-btns i {
-    cursor: pointer;
     color: #6275e0;
     font-weight: bolder;
     padding: 8px;
+}
+
+/* on hover effects for mobile control buttons */
+#control-btns button:hover {
+    cursor: pointer;
+    filter: hue-rotate(90deg);
 }
 
 /* style footer */
