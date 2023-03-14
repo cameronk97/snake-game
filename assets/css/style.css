@@ -24,7 +24,7 @@ h1 {
     text-transform: uppercase; 
     letter-spacing: 0.4rem;
     text-align: center;
-    font-size: 325%;
+    font-size: 4rem;
 }
 
 /* game information section */
@@ -32,7 +32,7 @@ h1 {
     color: #f7f7fc;
     text-align: center;
     font-family: 'Gruppo', Arial, sans-serif;
-    padding-bottom: 3%;
+    margin: 0 4rem 0.6rem;
 }
 
 /* Hide game information paragraph for mobile by default */
@@ -49,7 +49,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     background-color: #272760;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 /* current game score and high score section container */
@@ -57,7 +57,7 @@ h1 {
     text-align: center;
     display: flex;
     justify-content: space-between;
-    padding: 10px 10px;
+    padding: 1rem 1rem;
 }
 
 /* styles for game scores */
@@ -93,7 +93,7 @@ h1 {
     text-transform: uppercase;
     border-radius: 5%;
     border: 3px outset #0cffe1;
-    padding: 5%;
+    padding: 2rem;
     margin: 0;
     position: absolute;
     top: 50%;
@@ -139,7 +139,7 @@ h1 {
 #control-btns i {
     color: #6275e0;
     font-weight: bolder;
-    padding: 8px;
+    padding: 0.5rem;
 }
 
 /* on hover effects for mobile control buttons */
@@ -153,22 +153,60 @@ footer {
     color: #f7f7fc;
     font-family: 'Gruppo', Arial, sans-serif;
     text-align: center;
-    padding: 1.5% 0;
+    padding: 0.5rem 0;
 }
 
 /* Media queries */
 
-/* For tablet and mobile screen sizes from 1000px and down */
+/* For medium screen sizes from 1000px and down */
 @media screen and (max-width: 1000px) {
+    /* display arrow control buttons for mobile */
     #control-btns button {
         display: block;
     }
-
+    /* display game information paragraph for mobile */
     #mobile-info {
         display: inline-block;
     }
-    
+    /* hide game information paragraph for desktop */
     #desktop-info {
         display: none;
+    }
+
+    /* increase margin for game information section */
+    #game-info {
+    margin: 0 10rem 0.6rem;
+    }
+
+    .start-button {
+        padding: 1.5rem;
+    }
+}
+
+/* For medium to small screen sizes from 800px and down */
+@media screen and (max-width: 800px) {
+    /* decrease margin for game information section */
+    #game-info {
+    margin: 0 5rem 0.6rem;
+    }
+}
+
+/* For small screen sizes from 600px and down */
+@media screen and (max-width: 600px) {
+    /* decrease margin for game information section */
+    #game-info {
+    margin: 0 0 0.6rem;
+    }
+
+    h1 {
+        font-size: 3.4rem;
+    }
+}
+
+/* For very small screen sizes from 450px and down */
+@media screen and (max-width: 450px) {
+    /* decrease margin for game information section */
+    .start-button {
+        padding: 1rem;
     }
 }
