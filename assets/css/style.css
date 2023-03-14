@@ -35,6 +35,11 @@ h1 {
     padding-bottom: 3%;
 }
 
+/* Hide game information paragraph for mobile by default */
+#mobile-info {
+    display: none;
+}
+
 /* wrapper for game scores and game area sections */
 #game-wrapper {
     width: 90vmin;
@@ -157,5 +162,13 @@ footer {
 @media screen and (max-width: 1000px) {
     #control-btns button {
         display: block;
+    }
+
+    #mobile-info {
+        display: inline-block;
+    }
+    
+    #desktop-info {
+        display: none;
     }
 }
