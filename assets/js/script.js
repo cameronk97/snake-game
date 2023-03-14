@@ -17,6 +17,13 @@ let snakeBody = [];
 let setIntervalId;
 let score = 0;
 
+// Prevent default arrow key scrolling
+window.addEventListener("keydown", function(e) {
+    if(["space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(e.code) >-1){
+        e.preventDefault();
+    }
+}, false);
+
 // Getting high score from the local storage
 let highScore = localStorage.getItem("high-score") || 0;
 highScoreElement.innerText = `High Score: ${highScore}`;
