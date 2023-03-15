@@ -20,7 +20,7 @@ let score = 0;
 
 // Prevent default arrow key scrolling
 window.addEventListener("keydown", function(e) {
-    if(["space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(e.code) >-1){
+    if(["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(e.code) >-1){
         e.preventDefault();
     }
 }, false);
