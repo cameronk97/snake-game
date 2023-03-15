@@ -6,6 +6,7 @@ const startScreen = document.getElementById("start-screen");
 const gameOverScreen = document.getElementById("game-over");
 const restartBtn = document.getElementById("restart");
 
+let displayGame = false;
 let gameOver = false;
 let foodX;
 let foodY;
@@ -35,6 +36,7 @@ function startGame() {
     startScreen.style.display = "none";
     gameOverScreen.style.display = "none";
     gameArea.style.display = "grid";
+    displayGame = true;
     initGame();
 }
 
@@ -48,7 +50,7 @@ function placeFood () {
 
 restartBtn.onclick = function() {
     window.location.reload(true);
-    element.remove(startScreen);
+    element.remove(startScreen); /* does this work? */
     endGame();
 };
 
@@ -60,6 +62,7 @@ function endGame() {
     startScreen.style.display = "none";
     gameArea.style.display = "none";
     gameOverScreen.style.display = "block";
+    displayGame = false;
     localStorage.setItem("high-score", highScore);
 }
 
@@ -68,19 +71,21 @@ function endGame() {
  * @param {Event} e - Event object
  */
 function changeDirection(e) {
-    // Changing velocity value on key press
-    if(e.key === "ArrowUp" && velocityY != 1) {
-        velocityX = 0;
-        velocityY = -1;
-    } else if(e.key === "ArrowDown" && velocityY != -1) {
-        velocityX = 0;
-        velocityY = 1;
-    } else if(e.key === "ArrowLeft" && velocityX != 1) {
-        velocityX = -1;
-        velocityY = 0;
-    } else if(e.key === "ArrowRight" && velocityX != -1) {
-        velocityX = 1;
-        velocityY = 0;
+    if(displayGame === true) {
+        // Changing velocity value on key press
+        if(e.key === "ArrowUp" && velocityY != 1) {
+            velocityX = 0;
+            velocityY = -1;
+        } else if(e.key === "ArrowDown" && velocityY != -1) {
+            velocityX = 0;
+            velocityY = 1;
+        } else if(e.key === "ArrowLeft" && velocityX != 1) {
+            velocityX = -1;
+            velocityY = 0;
+        } else if(e.key === "ArrowRight" && velocityX != -1) {
+            velocityX = 1;
+            velocityY = 0;
+        }
     }
 }
 
