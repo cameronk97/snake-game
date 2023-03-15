@@ -133,6 +133,8 @@ h1 {
     border-radius: 30%;
     border-color: #0cffe1;
     display: none;
+    background-position: center;
+    transition: background 0.5s;
 }
 
 /* style icons on control buttons for mobile */
@@ -142,11 +144,16 @@ h1 {
     padding: 0.5rem;
 }
 
-/* on hover effects for mobile control buttons */
-#control-btns button:hover {
-    cursor: pointer;
-    filter: hue-rotate(90deg);
-}
+/* Ripple animation effect for mobile control buttons on tap*/
+  #control-btns button:hover {
+    background: #f7f7fc radial-gradient(circle, transparent 1%, #f7f7fc 1%) center/15000%;
+  }
+  
+  #control-btns button:active {
+    background-color: #0cffe1;
+    background-size: 100%;
+    transition: background 0s;
+  }
 
 /* style footer */
 footer {
@@ -158,8 +165,8 @@ footer {
 
 /* Media queries */
 
-/* For medium screen sizes from 1000px and down */
-@media screen and (max-width: 1000px) {
+/* For large to medium screen sizes from 1024px and down */
+@media screen and (max-width: 1024px) {
     /* display arrow control buttons for mobile */
     #control-btns button {
         display: block;
