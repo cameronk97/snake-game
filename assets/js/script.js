@@ -50,7 +50,6 @@ function placeFood () {
 
 restartBtn.onclick = function() {
     window.location.reload(true);
-    element.remove(startScreen); /* does this work? */
     endGame();
 };
 
