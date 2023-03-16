@@ -20,7 +20,7 @@
     <!-- header -->
     <header>
         <!-- logo -->
-        <a href="index.html">
+        <a href="index.html" aria-label="a link to refresh the homepage">
             <h1 id="logo">Snake</h1>
         </a>
     </header>
@@ -53,12 +53,12 @@
         <section id="game-area" style="display:none"></section>
 
         <div id="start-screen" class="screen" style="display:block">
-            <img src="assets/images/start-screen.png" class="game-screen" alt="">
+            <img src="assets/images/start-screen.png" class="game-screen" alt="start game screen">
             <button class="start-button" onclick="startGame()">Play Game</button>
         </div>
 
         <div id="game-over" class="screen" style="display:none">
-            <img src="assets/images/game-over.png" class="game-screen" alt="">
+            <img src="assets/images/game-over.png" class="game-screen" alt="game over screen">
             <button id="restart" class="start-button" onclick="endGame()">Restart</button>
         </div>
     </div>
