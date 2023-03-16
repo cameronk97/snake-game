@@ -1,5 +1,5 @@
 /* import google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Gruppo&family=Press+Start+2P&family=Source+Code+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Press+Start+2P&display=swap"');
 
 body {
     /* background colour for webpage */
@@ -87,7 +87,7 @@ h1 {
 /* start game button on start screen */
 .start-button {
     font-family: 'Press Start 2P', Arial, sans-serif;
-    background-color: #636a91;
+    background-color: #3e445b;
     font-size: 100%;
     color: #3eff65;
     text-transform: uppercase;
@@ -193,7 +193,7 @@ footer {
 	
 #return-button {
 	font-family: 'Press Start 2P', Arial, sans-serif;
-    background-color: #636a91;
+    background-color: #3e445b;
     font-size: 65%;
     color: #3eff65;
     text-transform: uppercase;
