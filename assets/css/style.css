@@ -120,7 +120,7 @@ h1 {
 /* set colour for food */
 #game-area .food {
     background-color: #ff6b6b;
-  }
+}
 
 /* set colour for snake */
 #game-area .head {
@@ -145,15 +145,15 @@ h1 {
 }
 
 /* Ripple animation effect for mobile control buttons on tap*/
-  #control-btns button:hover {
+#control-btns button:hover {
     background: #f7f7fc radial-gradient(circle, transparent 1%, #f7f7fc 1%) center/15000%;
-  }
+}
   
-  #control-btns button:active {
+#control-btns button:active {
     background-color: #0cffe1;
     background-size: 100%;
     transition: background 0s;
-  }
+}
 
 /* style footer */
 footer {
@@ -161,6 +161,51 @@ footer {
     font-family: 'Gruppo', Arial, sans-serif;
     text-align: center;
     padding: 0.5rem 0;
+}
+
+/* style error message for 404 page */
+#error-message {
+    width: 70vmin;
+    height: 70vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #6275e0;
+}
+
+#error-message h2 {
+	color: #ff6b6b;
+	font-family: 'Press Start 2P', Arial, sans-serif;
+    text-transform: uppercase; 
+    letter-spacing: 0.4rem;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+#error-message p {
+	color: #0cffe1;
+	font-family: 'Press Start 2P', Arial, sans-serif;
+	font-size: 0.9rem;
+	padding: 0 2rem 1.5rem;
+	text-transform: uppercase;
+	text-align: center;
+}
+	
+#return-button {
+	font-family: 'Press Start 2P', Arial, sans-serif;
+    background-color: #636a91;
+    font-size: 65%;
+    color: #3eff65;
+    text-transform: uppercase;
+    border-radius: 5%;
+    border: 3px outset #0cffe1;
+    padding: 1.2rem;
+    margin: 0 auto;
+}
+
+#return-button:hover {
+    cursor: pointer;
+    filter: hue-rotate(90deg);
 }
 
 /* Media queries */
@@ -214,6 +259,26 @@ footer {
 @media screen and (max-width: 450px) {
     /* decrease margin for game information section */
     .start-button {
+        padding: 1rem;
+    }
+	
+    #error-message {
+        width: 75vmin;
+	    height: 75vmin;
+    }
+	
+	#error-message h2 {
+        letter-spacing: 0.3rem;
+        font-size: 1.3rem;
+	}
+
+    #error-message p {
+    	font-size: 0.8rem;
+        padding: 0;
+    }
+	
+    #return-button {
+        font-size: 60%;
         padding: 1rem;
     }
 }
