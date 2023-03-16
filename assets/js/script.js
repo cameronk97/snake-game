@@ -1,6 +1,6 @@
 const gameArea = document.getElementById("game-area");
 const scoreElement = document.getElementById("current-score");
-const highScoreElement = document.getElementById("high-score");
+const getHighScore = document.getElementById("high-score");
 const controls = document.querySelectorAll("#control-btns button");
 const startScreen = document.getElementById("start-screen");
 const gameOverScreen = document.getElementById("game-over");
@@ -8,6 +8,7 @@ const restartBtn = document.getElementById("restart");
 
 let displayGame = false;
 let gameOver = false;
+let gridSize = 30;
 let foodX;
 let foodY;
 let snakeX = 5;
@@ -15,19 +16,20 @@ let snakeY = 5;
 let velocityX = 0;
 let velocityY = 0;
 let snakeBody = [];
-let setIntervalId;
+let interval;
 let score = 0;
 
 // Prevent default arrow key scrolling
-window.addEventListener("keydown", function(e) {
-    if(["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(e.code) >-1){
-        e.preventDefault();
+window.addEventListener("keydown", function(event) {
+    let arrowKeys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
+    if (arrowKeys.includes(event.code)) {
+      event.preventDefault();
     }
-}, false);
+});
 
-// Getting high score from the local storage
+// Obtaining the high score from the local storage
 let highScore = localStorage.getItem("high-score") || 0;
-highScoreElement.innerText = `High Score: ${highScore}`;
+getHighScore.innerText = `High Score: ${highScore}`;
 
 /**
  * Starts the game
@@ -37,15 +39,15 @@ function startGame() {
     gameOverScreen.style.display = "none";
     gameArea.style.display = "grid";
     displayGame = true;
-    initGame();
+    initGamePlay();
 }
 
 /**
  * Places the food randomly on the grid
  */
 function placeFood () {
-    foodX = Math.floor(Math.random() * 30) + 1;
-    foodY = Math.floor(Math.random() * 30) + 1;
+    foodX = Math.floor(Math.random() * gridSize) + 1;
+    foodY = Math.floor(Math.random() * gridSize) + 1;
 }
 
 restartBtn.onclick = function() {
@@ -57,7 +59,7 @@ restartBtn.onclick = function() {
  * Ends the game
  */
 function endGame() {
-    clearInterval(setIntervalId);
+    clearInterval(interval);
     startScreen.style.display = "none";
     gameArea.style.display = "none";
     gameOverScreen.style.display = "block";
@@ -69,32 +71,44 @@ function endGame() {
  * When key is pressed, change the direction of the snake
  * @param {Event} e - Event object
  */
-function changeDirection(e) {
-    if(displayGame === true) {
-        // Changing velocity value on key press
-        if(e.key === "ArrowUp" && velocityY != 1) {
+function setDirection(e) {
+    if(!displayGame) {
+        return;
+    }
+    
+    switch(e.key) {
+        case "ArrowUp":
+            if(velocityY === 1) return;
             velocityX = 0;
             velocityY = -1;
-        } else if(e.key === "ArrowDown" && velocityY != -1) {
+            break;
+        case "ArrowDown":
+            if(velocityY === -1) return;
             velocityX = 0;
             velocityY = 1;
-        } else if(e.key === "ArrowLeft" && velocityX != 1) {
+            break;
+        case "ArrowLeft":
+            if(velocityX === 1) return;
             velocityX = -1;
             velocityY = 0;
-        } else if(e.key === "ArrowRight" && velocityX != -1) {
+            break;
+        case "ArrowRight":
+            if(velocityX === -1) return;
             velocityX = 1;
             velocityY = 0;
-        }
+            break;
+        default: return;
     }
 }
 
-controls.forEach(button => button.addEventListener("click", () => changeDirection({ key: button.dataset.key })));
+// Event listener for arrow keys to call the setDirection function
+controls.forEach(button => button.addEventListener("click", () => setDirection({ key: button.dataset.key })));
 
 /**
  * Initialize the game
  * @returns {void} - Returns nothing
  */
-function initGame() {
+function initGamePlay() {
     if(gameOver) return endGame();
     let html = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
 
@@ -105,7 +119,7 @@ function initGame() {
         if (score > highScore) {
             highScore = score;
             localStorage.setItem("high-score", highScore);
-            highScoreElement.innerText = `High Score: ${highScore}`;
+            getHighScore.innerText = `High Score: ${highScore}`;
         }
         scoreElement.innerText = `Score: ${score}`;
     }
@@ -131,5 +145,5 @@ function initGame() {
 }
 
 placeFood();
-setIntervalId = setInterval(initGame, 100);
-document.addEventListener("keydown", changeDirection);
+interval = setInterval(initGamePlay, 100);
+document.addEventListener("keydown", setDirection);
